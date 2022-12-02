@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "requisitions",
+  "info": {
+    "singularName": "requisition",
+    "pluralName": "requisitions",
+    "displayName": "Requisition"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_name": {
+      "type": "string",
+      "required": true
+    },
+    "product_details": {
+      "type": "text"
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true
+    },
+    "required_date": {
+      "type": "date"
+    },
+    "urgency": {
+      "type": "enumeration",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "urgent",
+        "needsToday"
+      ]
+    },
+    "requestedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "checkedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "approvedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "purchasedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "    created ",
+        "    approved ",
+        "    processing ",
+        "    delivered ",
+        "    denied "
+      ]
+    },
+    "comment": {
+      "type": "text"
+    }
+  }
+}

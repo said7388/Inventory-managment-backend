@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_usage_histories",
+  "info": {
+    "singularName": "product-usage-history",
+    "pluralName": "product-usage-histories",
+    "displayName": "Product_usage_history"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "started_using": {
+      "type": "date"
+    },
+    "ended_using": {
+      "type": "date"
+    }
+  }
+}
