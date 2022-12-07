@@ -21,6 +21,12 @@
       "relation": "oneToMany",
       "target": "api::product.product",
       "mappedBy": "department"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "department"
     }
   }
 }

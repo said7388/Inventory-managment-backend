@@ -8,7 +8,8 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": true,
+    "populateCreatorFields": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -28,13 +29,11 @@
     "vendor": {
       "type": "string"
     },
-    "purchasedAt": {
-      "type": "date"
-    },
     "usingBy": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "admin::user"
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "products"
     },
     "department": {
       "type": "relation",
@@ -47,6 +46,9 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "products"
+    },
+    "purchasedAt": {
+      "type": "datetime"
     }
   }
 }

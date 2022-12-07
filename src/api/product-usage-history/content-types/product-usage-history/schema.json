@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product-usage-history",
     "pluralName": "product-usage-histories",
-    "displayName": "Product_usage_history"
+    "displayName": "Product_usage_history",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,7 +20,7 @@
     "user": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "admin::user"
+      "target": "plugin::users-permissions.user"
     },
     "started_using": {
       "type": "date"
